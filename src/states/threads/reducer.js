@@ -5,7 +5,7 @@ function threadsReducer(threads = [], action = {}) {
     case ActionType.RECEIVE_THREADS:
       return action.payload.threads;
     case ActionType.ADD_THREAD:
-      return [action.payload.talk, ...threads];
+      return [action.payload.threads, ...threads];
     default:
       return threads;
   }
