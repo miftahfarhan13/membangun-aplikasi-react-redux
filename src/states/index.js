@@ -4,6 +4,12 @@ import usersReducer from './users/reducer';
 import leaderboardsReducer from './leaderboards/reducer';
 import { loadingBarReducer } from 'react-redux-loading-bar';
 import threadDetailReducer from './threadDetail/reducer';
+import authUserReducer from './authUser/reducer';
+import isPreloadReducer from './isPreload/reducer';
+
+export const getThreadsState = (state) => state.threads;
+export const getUsersState = (state) => state.users;
+export const getAuthUser = (state) => state.authUser;
 
 const store = configureStore({
   reducer: {
@@ -11,7 +17,9 @@ const store = configureStore({
     threads: threadsReducer,
     threadDetail: threadDetailReducer,
     leaderboards: leaderboardsReducer,
-    loadingBar: loadingBarReducer
+    loadingBar: loadingBarReducer,
+    authUser: authUserReducer,
+    isPreload: isPreloadReducer
   }
 });
 

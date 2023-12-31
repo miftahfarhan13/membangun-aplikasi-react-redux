@@ -5,7 +5,9 @@ import { asyncReceiveLeaderboards } from '../states/leaderboards/action';
 import LeaderboardList from '../components/Leaderboard';
 
 function Leaderboard() {
-  const { leaderboards = [] } = useSelector((states) => states);
+  const { leaderboards = [] } = useSelector((states) => ({
+    leaderboards: states.leaderboards
+  }));
 
   const dispatch = useDispatch();
 

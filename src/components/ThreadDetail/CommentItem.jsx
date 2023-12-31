@@ -1,16 +1,8 @@
-import React from 'react';
 import { commentShape } from '../../utils/shape';
 import { Avatar, Flex, Stack, Text } from '@chakra-ui/react';
 import moment from 'moment';
 
-function CommentItem({
-  id,
-  content,
-  createdAt,
-  downVotesBy,
-  upVotesBy,
-  owner
-}) {
+function CommentItem({ content, createdAt, owner }) {
   return (
     <>
       <Stack direction="row" alignItems="start" spacing="10px">

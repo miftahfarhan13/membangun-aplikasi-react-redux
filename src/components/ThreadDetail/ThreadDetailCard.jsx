@@ -1,9 +1,8 @@
 import { Avatar, Badge, Card, Flex, Stack, Text } from '@chakra-ui/react';
-import React from 'react';
 import { threadDetailShape } from '../../utils/shape';
 import moment from 'moment';
 
-function ThreadDetailCard({ id, title, body, category, createdAt, owner }) {
+function ThreadDetailCard({ title, body, category, createdAt, owner }) {
   return (
     <>
       <Card p="20px">

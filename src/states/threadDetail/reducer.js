@@ -6,12 +6,10 @@ function threadDetailReducer(threadDetail = null, action = {}) {
       return action.payload.threadDetail;
     case ActionType.CLEAR_THREAD_DETAIL:
       return null;
-    case ActionType.TOGGLE_LIKE_THREAD_DETAIL:
+    case ActionType.ADD_COMMENT:
       return {
         ...threadDetail,
-        likes: threadDetail.likes.includes(action.payload.ownerId)
-          ? threadDetail.likes.filter((id) => id !== action.payload.ownerId)
-          : threadDetail.likes.concat(action.payload.ownerId),
+        comments: threadDetail.comments.concat(action.payload.comment)
       };
     default:
       return threadDetail;

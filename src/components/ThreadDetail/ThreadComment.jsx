@@ -1,5 +1,4 @@
 import { Card, Divider, Stack, Text } from '@chakra-ui/react';
-import React from 'react';
 import { commentShape } from '../../utils/shape';
 import PropTypes from 'prop-types';
 import CommentItem from './CommentItem';

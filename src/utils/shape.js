@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 const userShape = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired
+  id: PropTypes.string,
+  name: PropTypes.string,
+  email: PropTypes.string,
+  avatar: PropTypes.string
 };
 
 const commentShape = {
@@ -15,27 +15,28 @@ const commentShape = {
 };
 
 const threadItemShape = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  user: PropTypes.shape(userShape).isRequired
+  id: PropTypes.string,
+  title: PropTypes.string,
+  body: PropTypes.string,
+  category: PropTypes.string,
+  createdAt: PropTypes.string,
+  user: PropTypes.shape(userShape),
+  totalComments: PropTypes.number
 };
 
 const threadDetailShape = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  owner: PropTypes.shape(userShape).isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  body: PropTypes.string,
+  category: PropTypes.string,
+  createdAt: PropTypes.string,
+  owner: PropTypes.shape(userShape),
   comments: PropTypes.arrayOf(PropTypes.shape(commentShape))
 };
 
 const leaderboardItemShape = {
-  user: PropTypes.shape(userShape).isRequired,
-  score: PropTypes.number.isRequired
+  user: PropTypes.shape(userShape),
+  score: PropTypes.number
 };
 
-export { threadItemShape, leaderboardItemShape, threadDetailShape, commentShape };
+export { threadItemShape, leaderboardItemShape, threadDetailShape, commentShape, userShape };

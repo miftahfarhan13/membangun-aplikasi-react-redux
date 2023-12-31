@@ -40,12 +40,12 @@ function asyncReceiveThreads() {
   };
 }
 
-function asyncAddThread({ text, replyTo = '' }) {
+function asyncAddThread({ title = '', body = '', category }) {
   return async (dispatch) => {
     dispatch(showLoading());
 
     try {
-      const thread = await api.createThreads({ text, replyTo });
+      const thread = await api.createThreads({ title, body, category });
       dispatch(addThreadActionCreator(thread));
     } catch (error) {
       alert(error.message);

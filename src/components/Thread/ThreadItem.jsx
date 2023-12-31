@@ -3,14 +3,23 @@ import moment from 'moment';
 import { threadItemShape } from '../../utils/shape';
 import { Link } from 'react-router-dom';
 import { truncate } from '../../utils/string';
+import { Icon } from '@iconify/react';
 
-function ThreadItem({ id, title, body, category, createdAt, user }) {
+function ThreadItem({
+  id,
+  title,
+  body,
+  category,
+  createdAt,
+  user,
+  totalComments
+}) {
   return (
     <>
       <Link to={`/thread/${id}`}>
         <Card p="20px">
           <Stack direction="row" alignItems="start" spacing="10px">
-            <Avatar src={user.avatar} size="xs" mt="4px" />
+            <Avatar src={user?.avatar} size="xs" mt="4px" />
             <Stack
               direction="column"
               alignItems="start"
@@ -20,7 +29,7 @@ function ThreadItem({ id, title, body, category, createdAt, user }) {
               <Stack direction="column" spacing="4px" w="100%">
                 <Flex direction="row" justifyContent="space-between">
                   <Text fontSize="14px" fontWeight="500">
-                    {user.name}
+                    {user?.name}
                   </Text>
                   <Text fontSize="12px" color="grey">
                     {moment(createdAt).fromNow()}
@@ -35,6 +44,15 @@ function ThreadItem({ id, title, body, category, createdAt, user }) {
                 ></Text>
               </Stack>
               <Badge>#{category}</Badge>
+              <Stack
+                direction="row"
+                alignItems="center"
+                spacing="5px"
+                color="grey"
+              >
+                <Icon icon="bx:chat" />
+                <Text fontSize="12px">{totalComments}</Text>
+              </Stack>
             </Stack>
           </Stack>
         </Card>

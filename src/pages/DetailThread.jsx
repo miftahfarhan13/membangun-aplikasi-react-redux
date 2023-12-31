@@ -6,20 +6,24 @@ import { useParams } from 'react-router-dom';
 import ThreadDetail from '../components/ThreadDetail';
 
 function DetailThread() {
-  const { threadDetail } = useSelector((states) => states);
+  const { id } = useParams();
 
-  const params = useParams();
+  const { threadDetail = null, authUser } = useSelector((states) => states);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(asyncReceiveThreadDetail(params.id));
-  }, [dispatch]);
+    dispatch(asyncReceiveThreadDetail(id));
+  }, [dispatch, id]);
+
+  if (!threadDetail) {
+    return null;
+  }
 
   return (
     <>
       <AppLayoutDetail title="Detail Thread" backLink="/">
-        <ThreadDetail thread={threadDetail} />
+        <ThreadDetail thread={threadDetail} authUser={authUser} />
       </AppLayoutDetail>
     </>
   );

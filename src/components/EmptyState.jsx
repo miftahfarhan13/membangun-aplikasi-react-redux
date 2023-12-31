@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types';
 import { Card, Center, Image, Stack, Text } from '@chakra-ui/react';
-import React from 'react';
 
 function EmptyState({ text }) {
   return (
@@ -13,5 +13,9 @@ function EmptyState({ text }) {
     </Card>
   );
 }
+
+EmptyState.propTypes = {
+  text: PropTypes.string
+};
 
 export default EmptyState;
