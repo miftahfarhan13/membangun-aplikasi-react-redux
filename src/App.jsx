@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { ChakraProvider } from '@chakra-ui/react';
 import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
 import Account from './pages/Account';
@@ -24,16 +25,20 @@ function App() {
 
   return (
     <>
-      <Loading />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/thread/:id" element={<DetailThread />} />
-          <Route path="/leaderboards" element={<Leaderboard />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/account/register" element={<Register />} />
-        </Routes>
-      </main>
+      <BrowserRouter>
+        <Loading />
+        <ChakraProvider>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/thread/:id" element={<DetailThread />} />
+              <Route path="/leaderboards" element={<Leaderboard />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/account/register" element={<Register />} />
+            </Routes>
+          </main>
+        </ChakraProvider>
+      </BrowserRouter>
     </>
   );
 }
