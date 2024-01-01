@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Stack } from '@chakra-ui/react';
 import { leaderboardItemShape } from '../../utils/shape';
@@ -7,7 +8,7 @@ function LeaderboardList({ leaderboards }) {
   return (
     <Stack direction="column" spacing="20px">
       {leaderboards?.map((thread, index) => (
-        <LeaderboardItem {...thread} key={index} index={index} />
+        <LeaderboardItem {...thread} key={thread?.id} index={index} />
       ))}
     </Stack>
   );
@@ -15,7 +16,7 @@ function LeaderboardList({ leaderboards }) {
 
 LeaderboardList.propTypes = {
   leaderboards: PropTypes.arrayOf(PropTypes.shape(leaderboardItemShape))
-    .isRequired
+    .isRequired,
 };
 
 export default LeaderboardList;

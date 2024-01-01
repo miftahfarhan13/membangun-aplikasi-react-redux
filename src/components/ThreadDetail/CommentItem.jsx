@@ -1,6 +1,7 @@
-import { commentShape } from '../../utils/shape';
+import React from 'react';
 import { Avatar, Flex, Stack, Text } from '@chakra-ui/react';
 import moment from 'moment';
+import { commentShape } from '../../utils/shape';
 
 function CommentItem({ content, createdAt, owner }) {
   return (
@@ -20,7 +21,7 @@ function CommentItem({ content, createdAt, owner }) {
             <Text
               fontSize="14px"
               dangerouslySetInnerHTML={{ __html: content }}
-            ></Text>
+            />
           </Stack>
         </Stack>
       </Stack>
@@ -29,7 +30,7 @@ function CommentItem({ content, createdAt, owner }) {
 }
 
 CommentItem.propTypes = {
-  ...commentShape
+  ...commentShape,
 };
 
 export default CommentItem;

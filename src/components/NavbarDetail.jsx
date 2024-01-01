@@ -1,12 +1,8 @@
+import React from 'react';
 import { Box, Container, Stack, Text } from '@chakra-ui/react';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-NavbarDetail.propTypes = {
-  title: PropTypes.string.isRequired,
-  backLink: PropTypes.string.isRequired
-};
 
 function NavbarDetail({ title, backLink }) {
   return (
@@ -38,5 +34,10 @@ function NavbarDetail({ title, backLink }) {
     </>
   );
 }
+
+NavbarDetail.propTypes = {
+  title: PropTypes.string.isRequired,
+  backLink: PropTypes.string.isRequired,
+};
 
 export default NavbarDetail;

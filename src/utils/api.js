@@ -14,8 +14,8 @@ const api = (() => {
       ...options,
       headers: {
         ...options.headers,
-        Authorization: `Bearer ${getAccessToken()}`
-      }
+        Authorization: `Bearer ${getAccessToken()}`,
+      },
     });
   }
 
@@ -23,13 +23,13 @@ const api = (() => {
     const response = await fetch(`${BASE_URL}/register`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name,
         email,
-        password
-      })
+        password,
+      }),
     });
 
     const responseJson = await response.json();
@@ -40,7 +40,7 @@ const api = (() => {
     }
 
     const {
-      data: { user }
+      data: { user },
     } = responseJson;
 
     return user;
@@ -50,12 +50,12 @@ const api = (() => {
     const response = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,
-        password
-      })
+        password,
+      }),
     });
 
     const responseJson = await response.json();
@@ -67,7 +67,7 @@ const api = (() => {
     }
 
     const {
-      data: { token }
+      data: { token },
     } = responseJson;
 
     return token;
@@ -85,7 +85,7 @@ const api = (() => {
     }
 
     const {
-      data: { user }
+      data: { user },
     } = responseJson;
 
     return user;
@@ -103,7 +103,7 @@ const api = (() => {
     }
 
     const {
-      data: { users }
+      data: { users },
     } = responseJson;
 
     return users;
@@ -121,7 +121,7 @@ const api = (() => {
     }
 
     const {
-      data: { threads }
+      data: { threads },
     } = responseJson;
 
     return threads;
@@ -139,7 +139,7 @@ const api = (() => {
     }
 
     const {
-      data: { detailThread }
+      data: { detailThread },
     } = responseJson;
 
     return detailThread;
@@ -149,13 +149,13 @@ const api = (() => {
     const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         title,
         body,
-        category
-      })
+        category,
+      }),
     });
 
     const responseJson = await response.json();
@@ -167,7 +167,7 @@ const api = (() => {
     }
 
     const {
-      data: { thread }
+      data: { thread },
     } = responseJson;
 
     return thread;
@@ -179,12 +179,12 @@ const api = (() => {
       {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          content
-        })
-      }
+          content,
+        }),
+      },
     );
 
     const responseJson = await response.json();
@@ -196,7 +196,7 @@ const api = (() => {
     }
 
     const {
-      data: { comment }
+      data: { comment },
     } = responseJson;
 
     return comment;
@@ -206,8 +206,8 @@ const api = (() => {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/up-vote`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     });
 
     const responseJson = await response.json();
@@ -225,9 +225,9 @@ const api = (() => {
       {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+          'Content-Type': 'application/json',
+        },
+      },
     );
 
     const responseJson = await response.json();
@@ -251,7 +251,7 @@ const api = (() => {
     }
 
     const {
-      data: { leaderboards }
+      data: { leaderboards },
     } = responseJson;
 
     return leaderboards;
@@ -270,7 +270,7 @@ const api = (() => {
     downVoteThread,
     getThreadsDetail,
     createComment,
-    getAllLeaderboards
+    getAllLeaderboards,
   };
 })();
 

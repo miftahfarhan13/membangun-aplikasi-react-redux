@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   IconButton,
@@ -14,11 +15,11 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Textarea
+  Textarea,
 } from '@chakra-ui/react';
 import { Icon } from '@iconify/react';
-import useInput from '../../hooks/useInput';
 import { useDispatch } from 'react-redux';
+import useInput from '../../hooks/useInput';
 import { asyncAddThread } from '../../states/threads/action';
 
 function AddThread() {
@@ -105,7 +106,7 @@ function AddThread() {
             </form>
           </ModalBody>
 
-          <ModalFooter></ModalFooter>
+          <ModalFooter />
         </ModalContent>
       </Modal>
     </>

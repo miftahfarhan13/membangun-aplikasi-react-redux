@@ -1,7 +1,8 @@
+import React from 'react';
 import { Avatar, Card, Stack, Text } from '@chakra-ui/react';
-import { leaderboardItemShape } from '../../utils/shape';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
+import { leaderboardItemShape } from '../../utils/shape';
 
 function LeaderboardItem({ user, score, index }) {
   return (
@@ -27,7 +28,7 @@ function LeaderboardItem({ user, score, index }) {
 
 LeaderboardItem.propTypes = {
   ...leaderboardItemShape,
-  index: PropTypes.number.isRequired
+  index: PropTypes.number.isRequired,
 };
 
 export default LeaderboardItem;

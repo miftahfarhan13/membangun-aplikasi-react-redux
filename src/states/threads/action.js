@@ -3,15 +3,15 @@ import api from '../../utils/api';
 
 const ActionType = {
   RECEIVE_THREADS: 'RECEIVE_THREADS',
-  ADD_THREAD: 'ADD_THREAD'
+  ADD_THREAD: 'ADD_THREAD',
 };
 
 function receiveThreadsActionCreator(threads) {
   return {
     type: ActionType.RECEIVE_THREADS,
     payload: {
-      threads
-    }
+      threads,
+    },
   };
 }
 
@@ -19,8 +19,8 @@ function addThreadActionCreator(thread) {
   return {
     type: ActionType.ADD_THREAD,
     payload: {
-      thread
-    }
+      thread,
+    },
   };
 }
 
@@ -60,5 +60,5 @@ export {
   receiveThreadsActionCreator,
   addThreadActionCreator,
   asyncAddThread,
-  asyncReceiveThreads
+  asyncReceiveThreads,
 };

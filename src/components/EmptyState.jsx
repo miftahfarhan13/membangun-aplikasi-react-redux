@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Center, Image, Stack, Text } from '@chakra-ui/react';
 
@@ -15,7 +16,7 @@ function EmptyState({ text }) {
 }
 
 EmptyState.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string.isRequired,
 };
 
 export default EmptyState;

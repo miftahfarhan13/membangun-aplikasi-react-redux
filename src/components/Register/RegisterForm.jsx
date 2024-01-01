@@ -1,15 +1,16 @@
+import React from 'react';
 import {
   Button,
   FormControl,
   FormLabel,
   Input,
   Stack,
-  Text
+  Text,
 } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { asyncRegisterUser } from '../../states/users/action';
 import useInput from '../../hooks/useInput';
-import { useDispatch } from 'react-redux';
 
 function RegisterForm() {
   const navigate = useNavigate();

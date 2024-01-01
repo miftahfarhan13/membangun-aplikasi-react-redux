@@ -1,20 +1,23 @@
-import { Card, Divider, Stack, Text } from '@chakra-ui/react';
-import { commentShape } from '../../utils/shape';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { Card, Divider, Stack, Text } from '@chakra-ui/react';
 import CommentItem from './CommentItem';
 import EmptyState from '../EmptyState';
+import { commentShape } from '../../utils/shape';
 
 function ThreadComment({ comments }) {
   return (
     <>
       <Card p="20px">
         <Stack direction="column" spacing="20px">
-          <Text fontWeight="700">Komentar ({comments?.length})</Text>
+          <Text fontWeight="700">
+            {`Komentar (${comments?.length})`}
+          </Text>
           {comments?.length > 0 ? (
             <>
               <Stack direction="column" spacing="10px" divider={<Divider />}>
-                {comments?.map((comment, index) => (
-                  <CommentItem key={index} {...comment} />
+                {comments?.map((comment) => (
+                  <CommentItem key={comment?.id} {...comment} />
                 ))}
               </Stack>
             </>
@@ -30,7 +33,7 @@ function ThreadComment({ comments }) {
 }
 
 ThreadComment.propTypes = {
-  comments: PropTypes.arrayOf(PropTypes.shape(commentShape)).isRequired
+  comments: PropTypes.arrayOf(PropTypes.shape(commentShape)).isRequired,
 };
 
 export default ThreadComment;

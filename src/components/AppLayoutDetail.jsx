@@ -1,12 +1,7 @@
+import React from 'react';
 import { Box, Container, Stack } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import NavbarDetail from './NavbarDetail';
-
-AppLayoutDetail.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-  backLink: PropTypes.string.isRequired
-};
 
 function AppLayoutDetail({ title, backLink, children }) {
   return (
@@ -20,5 +15,11 @@ function AppLayoutDetail({ title, backLink, children }) {
     </Box>
   );
 }
+
+AppLayoutDetail.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  backLink: PropTypes.string.isRequired,
+};
 
 export default AppLayoutDetail;

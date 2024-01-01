@@ -4,15 +4,15 @@ import api from '../../utils/api';
 const ActionType = {
   RECEIVE_THREAD_DETAIL: 'RECEIVE_THREAD_DETAIL',
   CLEAR_THREAD_DETAIL: 'CLEAR_THREAD_DETAIL',
-  ADD_COMMENT: 'ADD_COMMENT'
+  ADD_COMMENT: 'ADD_COMMENT',
 };
 
 function receiveThreadDetailActionCreator(threadDetail) {
   return {
     type: ActionType.RECEIVE_THREAD_DETAIL,
     payload: {
-      threadDetail
-    }
+      threadDetail,
+    },
   };
 }
 
@@ -26,14 +26,14 @@ function addCommentActionCreator(comment) {
   return {
     type: ActionType.ADD_COMMENT,
     payload: {
-      comment
-    }
+      comment,
+    },
   };
 }
 
 function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
-    dispatch(showLoading())
+    dispatch(showLoading());
 
     dispatch(clearThreadDetailActionCreator());
 
@@ -44,7 +44,7 @@ function asyncReceiveThreadDetail(threadId) {
       alert(error.message);
     }
 
-    dispatch(hideLoading())
+    dispatch(hideLoading());
   };
 }
 
@@ -69,5 +69,5 @@ export {
   clearThreadDetailActionCreator,
   addCommentActionCreator,
   asyncReceiveThreadDetail,
-  asyncAddComment
+  asyncAddComment,
 };

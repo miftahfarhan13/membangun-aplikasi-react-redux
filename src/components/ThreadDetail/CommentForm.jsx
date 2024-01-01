@@ -1,8 +1,9 @@
+import React from 'react';
 import { Button, Card, Stack, Text, Textarea } from '@chakra-ui/react';
-import useInput from '../../hooks/useInput';
-import { asyncAddComment } from '../../states/threadDetail/action';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import useInput from '../../hooks/useInput';
+import { asyncAddComment } from '../../states/threadDetail/action';
 
 function CommentForm() {
   const { id } = useParams();

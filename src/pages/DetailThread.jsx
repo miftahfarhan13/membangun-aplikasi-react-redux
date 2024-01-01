@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import AppLayoutDetail from '../components/AppLayoutDetail';
 import { asyncReceiveThreadDetail } from '../states/threadDetail/action';
-import { useParams } from 'react-router-dom';
 import ThreadDetail from '../components/ThreadDetail';
 
 function DetailThread() {

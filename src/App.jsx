@@ -1,13 +1,13 @@
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
 import Account from './pages/Account';
 import Loading from './components/Loading';
 import DetailThread from './pages/DetailThread';
 import Register from './pages/Register';
-import { useDispatch, useSelector } from 'react-redux';
 import { asyncPreloadProcess } from './states/isPreload/action';
-import { useEffect } from 'react';
 
 function App() {
   const { isPreload = false } = useSelector((states) => states);

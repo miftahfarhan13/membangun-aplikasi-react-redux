@@ -1,9 +1,10 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import { userShape } from '../../utils/shape';
+import { useNavigate } from 'react-router-dom';
 import { Avatar, Button, Stack, Text } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
+import { userShape } from '../../utils/shape';
 import { asyncUnsetAuthUser } from '../../states/authUser/action';
-import { useNavigate } from 'react-router-dom';
 
 function AccountDetail({ authUser }) {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function AccountDetail({ authUser }) {
 }
 
 AccountDetail.propTypes = {
-  authUser: PropTypes.shape(userShape)
+  authUser: PropTypes.shape(userShape).isRequired,
 };
 
 export default AccountDetail;

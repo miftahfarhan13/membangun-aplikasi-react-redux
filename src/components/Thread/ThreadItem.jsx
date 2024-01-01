@@ -1,9 +1,10 @@
+import React from 'react';
 import { Avatar, Badge, Card, Flex, Stack, Text } from '@chakra-ui/react';
 import moment from 'moment';
-import { threadItemShape } from '../../utils/shape';
 import { Link } from 'react-router-dom';
-import { truncate } from '../../utils/string';
 import { Icon } from '@iconify/react';
+import { threadItemShape } from '../../utils/shape';
+import { truncate } from '../../utils/string';
 
 function ThreadItem({
   id,
@@ -12,7 +13,7 @@ function ThreadItem({
   category,
   createdAt,
   user,
-  totalComments
+  totalComments,
 }) {
   return (
     <>
@@ -41,9 +42,9 @@ function ThreadItem({
                 <Text
                   fontSize="14px"
                   dangerouslySetInnerHTML={{ __html: truncate(body, 300) }}
-                ></Text>
+                />
               </Stack>
-              <Badge>#{category}</Badge>
+              <Badge>{`#${category}`}</Badge>
               <Stack
                 direction="row"
                 alignItems="center"
@@ -62,7 +63,7 @@ function ThreadItem({
 }
 
 ThreadItem.propTypes = {
-  ...threadItemShape
+  ...threadItemShape,
 };
 
 export default ThreadItem;

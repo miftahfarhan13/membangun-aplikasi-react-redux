@@ -1,7 +1,8 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import ThreadDetailCard from './ThreadDetailCard';
 import { threadDetailShape, userShape } from '../../utils/shape';
 import ThreadComment from './ThreadComment';
-import PropTypes from 'prop-types';
 import CommentForm from './CommentForm';
 
 function ThreadDetail({ thread, authUser }) {
@@ -19,7 +20,7 @@ function ThreadDetail({ thread, authUser }) {
 
 ThreadDetail.propTypes = {
   ...threadDetailShape,
-  authUser: PropTypes.shape(userShape)
+  authUser: PropTypes.shape(userShape).isRequired,
 };
 
 export default ThreadDetail;

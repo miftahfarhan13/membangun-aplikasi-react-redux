@@ -1,6 +1,7 @@
+import React from 'react';
+import moment from 'moment';
 import { Avatar, Badge, Card, Flex, Stack, Text } from '@chakra-ui/react';
 import { threadDetailShape } from '../../utils/shape';
-import moment from 'moment';
 
 function ThreadDetailCard({ title, body, category, createdAt, owner }) {
   return (
@@ -24,11 +25,10 @@ function ThreadDetailCard({ title, body, category, createdAt, owner }) {
               <Text
                 fontSize="14px"
                 dangerouslySetInnerHTML={{ __html: body }}
-              ></Text>
+              />
             </Stack>
-            <Badge>#{category}</Badge>
+            <Badge>{`#${category}`}</Badge>
           </Stack>
-          
         </Stack>
       </Card>
     </>
@@ -36,7 +36,7 @@ function ThreadDetailCard({ title, body, category, createdAt, owner }) {
 }
 
 ThreadDetailCard.propTypes = {
-  ...threadDetailShape
+  ...threadDetailShape,
 };
 
 export default ThreadDetailCard;
